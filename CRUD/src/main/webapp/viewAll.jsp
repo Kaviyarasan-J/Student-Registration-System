@@ -11,7 +11,10 @@
 </head>
 </head>
 <body>
-	<div class="col-sm-8" style="margin-top:200px;margin-left:200px">
+    <div style="margin-left:70%;margin-top:10%">
+        <a href="index.jsp"><button class="btn btn-primary">Home</button></a>
+    </div>
+	<div class="col-sm-8" style="margin-top:50px;margin-left:200px">
 		<div class="panel-body">
 			<table id="tbl-student" class="table table-responsive table-bordered"
 				cellpadding="0" width="100%">

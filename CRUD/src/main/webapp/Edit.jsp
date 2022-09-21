@@ -17,19 +17,19 @@
            <form action="Updates" method="post">
                <div align="left">
                 <label class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter Name" value=<%=D.getName() %> required>
+                <input type="text" class="form-control" name="name" placeholder="Enter Name" value="<%=D.getName()%>"required>
                 </div>
                <div align="left">
                  <label class="form-label">Age</label>
-                <input type="text" class="form-control" name="age" placeholder="Enter Age" value=<%=D.getAge() %>required>
+                <input type="text" class="form-control" name="age" placeholder="Enter Age" value="<%=D.getAge()%>"required>
                 </div>
                <div align="left">
                  <label class="form-label">Course</label>
-                <input type="text" class="form-control" name="course" placeholder="Enter Course" value=<%=D.getCourse() %>required>
+                <input type="text" class="form-control" name="course" placeholder="Enter Course" value="<%=D.getCourse()%>"required>
                 </div>
                <div align="left">
                  <label class="form-label">Fee</label>
-                <input type="text" class="form-control" name="fee" placeholder="Enter Fee" value=<%=D.getFee()%>required>
+                <input type="text" class="form-control" name="fee" placeholder="Enter Fee" value="<%=D.getFee()%>"required>
                 </div>
                 <br>
             

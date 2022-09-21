@@ -11,7 +11,7 @@
      <h1><b>STUDENT REGISTERATION SYSTEM</b></h1>
   </div>
 <form action="Datas" method="post">
-  <div align="center">
+  <div style="margin-left:70%">
       <input type="submit" class="btn btn-primary" value="ViewAll">
   </div>
 </form>

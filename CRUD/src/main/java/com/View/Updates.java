@@ -8,8 +8,11 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.Model.Details;
+import com.crud.Read;
 import com.crud.Update;
 
 public class Updates extends HttpServlet {
@@ -24,15 +27,22 @@ public class Updates extends HttpServlet {
 		int Fee=Integer.parseInt(request.getParameter("fee"));
 		int id=Integer.parseInt(session.getAttribute("id").toString());
 		
-		Details D=new Details(id,Uname,Age,Course,Fee);
+		Details details=new Details(id,Uname,Age,Course,Fee);
 
-			try {
-				Update.update(D);
-			} catch (ClassNotFoundException | SQLException e) {
-				e.printStackTrace();
-			}
-		response.sendRedirect("index.jsp");
+		try {
+			Update.update(details);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		
+		List<Details> D=new ArrayList<>();
+		try {
+			D=Read.getData();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		session.setAttribute("Data", D);
+		response.sendRedirect("viewAll.jsp");
 	}
 
 }
