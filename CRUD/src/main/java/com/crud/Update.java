@@ -5,9 +5,6 @@ import java.sql.*;
 import com.Controller.ConnectionProvider;
 import com.Model.Details;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-
 public class Update {
 	 public static int add(Details D) throws SQLException, ClassNotFoundException {
 		 String query="insert into lists (Name,Age,Course,Fee)values(?,?,?,?)";

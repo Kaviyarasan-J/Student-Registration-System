@@ -72,4 +72,24 @@
     <servlet-name>UserValidate</servlet-name>
     <url-pattern>/UserValidate</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddUser</display-name>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.View.AddUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ForgetPassword</display-name>
+    <servlet-name>ForgetPassword</servlet-name>
+    <servlet-class>com.View.ForgetPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgetPassword</servlet-name>
+    <url-pattern>/ForgetPassword</url-pattern>
+  </servlet-mapping>
 </web-app>
