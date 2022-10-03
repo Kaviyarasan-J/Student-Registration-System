@@ -19,9 +19,9 @@ public class ForgetPassword extends HttpServlet {
 		String password2=request.getParameter("password2");
 		
 		String username=request.getParameter("uname");
-		
+		String type="user";
 		if(password.equals(password2)){
-			User Data=new User(username,password);
+			User Data=new User(username,password,type);
 			try {
 				UpdateUserDB.update(Data);
 				response.sendRedirect("Success.jsp");

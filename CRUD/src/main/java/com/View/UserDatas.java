@@ -9,37 +9,24 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.Model.User;
-import com.crud.UserData;
+import com.Model.Details;
+import com.crud.Read;
 
-public class UserValidate extends HttpServlet {
+public class UserDatas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		String username=request.getParameter("uname");
-		String password=request.getParameter("password");
-		String type=request.getParameter("type");
-		User Data=new User(username,password,type);
+		List<Details> D=new ArrayList<>();
 		try {
-			if(UserData.validate(Data,request)) {
-			    if(type.equals("admin")) {
-			    	session.setAttribute("type","admin");
-			    	response.sendRedirect("Admin.jsp");
-			    }
-			    else {
-			    	session.setAttribute("type","user");
-			    	response.sendRedirect("User.jsp");
-			    }
-			    
-			}
-			else {
-				response.sendRedirect("Error.jsp");
-			}
+			D=Read.getData((int)session.getAttribute("id"));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
+		session.setAttribute("Data", D);
+		response.sendRedirect("viewAll.jsp");
 	}
-
 }

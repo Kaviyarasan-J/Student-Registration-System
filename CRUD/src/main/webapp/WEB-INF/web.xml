@@ -92,4 +92,14 @@
     <servlet-name>ForgetPassword</servlet-name>
     <url-pattern>/ForgetPassword</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserDatas</display-name>
+    <servlet-name>UserDatas</servlet-name>
+    <servlet-class>com.View.UserDatas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDatas</servlet-name>
+    <url-pattern>/UserDatas</url-pattern>
+  </servlet-mapping>
 </web-app>

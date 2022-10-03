@@ -8,13 +8,34 @@
 <meta charset="UTF-8">
 <title>Informations</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
+<style>
+body {
+  background-image: url('https://shorturl.at/cnOP7');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>
 </head>
 <body>
-    <div style="margin-left:70%;margin-top:10%">
-        <a href="index.jsp"><button class="btn btn-primary">Home</button></a>
-    </div>
-	<div class="col-sm-8" style="margin-top:50px;margin-left:200px">
+    <%if(session.getAttribute("type").toString()=="admin")
+    {%>
+    	<div style="margin-left:70%;margin-top:10%">
+        <a href="Admin.jsp"><button class="btn btn-primary">Go Home</button></a>
+        </div>
+    <%
+    }
+    %>
+     <%if(session.getAttribute("type").toString()=="user")
+    {%>
+    	<div style="margin-left:70%;margin-top:10%">
+        <a href="User.jsp"><button class="btn btn-primary">Go Home</button></a>
+        </div>
+    <%
+    }
+    %>
+    
+	<div class="col-sm-8" style="margin-top:50px;margin-left:250px">
 		<div class="panel-body">
 			<table id="tbl-student" class="table table-responsive table-bordered"
 				cellpadding="0" width="100%">

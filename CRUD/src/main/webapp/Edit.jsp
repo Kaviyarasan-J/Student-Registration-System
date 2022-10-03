@@ -8,6 +8,14 @@
 <meta charset="UTF-8">
 <title>Edit</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+body {
+  background-image: url('https://mypcwalls.com/wp-content/uploads/2021/08/Abstract-Wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>
 </head>
 <body>
     <%Details D=FetchById.getData(Integer.parseInt(request.getParameter("id"))); %>
@@ -16,26 +24,30 @@
       <div class="col-sm-4">
            <form action="Updates" method="post">
                <div align="left">
-                <label class="form-label">Name</label>
+                <label class="form-label" style="color:white">Name</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter Name" value="<%=D.getName()%>"required>
                 </div>
+                <br>
                <div align="left">
-                 <label class="form-label">Age</label>
+                 <label class="form-label" style="color:white">Age</label>
                 <input type="text" class="form-control" name="age" placeholder="Enter Age" value="<%=D.getAge()%>"required>
                 </div>
+                <br>
                <div align="left">
-                 <label class="form-label">Course</label>
+                 <label class="form-label" style="color:white">Course</label>
                 <input type="text" class="form-control" name="course" placeholder="Enter Course" value="<%=D.getCourse()%>"required>
                 </div>
+                <br>
                <div align="left">
-                 <label class="form-label">Fee</label>
+                 <label class="form-label" style="color:white">Fee</label>
                 <input type="text" class="form-control" name="fee" placeholder="Enter Fee" value="<%=D.getFee()%>"required>
                 </div>
                 <br>
-            
                <div align="right">
                  <input type="submit" value="Update" class="btn btn-primary">
                </div>
            </form>
+           </div>
+       </div>
 </body>
 </html>
