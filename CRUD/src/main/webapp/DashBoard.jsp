@@ -15,7 +15,7 @@ body {
 }
 </style>
 </head>
-<body>
+<body >
    <%@include file="header.jsp" %>
    <div class="row" style="margin-left:31% ; margin-top:300px">
    <div class="col-sm-4" >

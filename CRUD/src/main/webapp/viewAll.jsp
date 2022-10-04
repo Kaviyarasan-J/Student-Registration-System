@@ -20,7 +20,7 @@ body {
 <body>
     <%if(session.getAttribute("type").toString().equals("admin"))
     {%>
-    	<div style="margin-left:70%;margin-top:10%">
+    	<div style="margin-left:70%;margin-top:3%">
         <a href="Admin.jsp"><button class="btn btn-primary">Go Home</button></a>
         </div>
     <%
@@ -28,14 +28,14 @@ body {
     %>
      <%if(session.getAttribute("type").toString().equals("user"))
     {%>
-    	<div style="margin-left:70%;margin-top:10%">
+    	<div style="margin-left:70%;margin-top:3%">
         <a href="User.jsp"><button class="btn btn-primary">Go Home</button></a>
         </div>
     <%
     }
     %>
     
-	<div class="col-sm-8" style="margin-top:50px;margin-left:250px">
+	<div class="col-sm-8" style="margin-top:30px;margin-left:250px">
 		<div class="panel-body">
 			<table id="tbl-student" class="table table-responsive table-bordered"
 				cellpadding="0" width="100%">

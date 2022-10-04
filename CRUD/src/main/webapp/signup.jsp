@@ -11,6 +11,7 @@
 	   var d=document.getElementById('pass').value;
 	   if(d.length<8){
 		   alert('Password must be minimum 8 characters');
+		   document.getElementById("submission").disabled=true;
 		   return;
 	   }
 	   if(x==0){
@@ -57,11 +58,11 @@ body {
         <br>
     <div align="center">
           <span >
-              <input class="form-check-input" type="radio" name="type" onclick="fun(0)" value="admin">
+              <input class="form-check-input" type="radio" name="type" id="admin" onclick="fun(0)" value="admin">
               <label class="form-check-label" for="flexRadioDefault1" style="color:white">Admin</label>
            </span>
            <span>
-              <input class="form-check-input" type="radio" name="type" onclick="fun(1)" value="user">
+              <input class="form-check-input" type="radio" name="type" id="user" onclick="fun(1)" value="user">
               <label class="form-check-label" for="flexRadioDefault1" style="color:white">User</label>
            </span>
         </div>
@@ -75,7 +76,7 @@ body {
        <br>
     </div>
      <div align="center">
-             <input type="submit" id="submission" class="btn btn-success" value="Sign in" disabled>
+             <input type="submit" id="submission" class="btn btn-success" value="Sign up" disabled>
      </div>
 </form>
 </div>

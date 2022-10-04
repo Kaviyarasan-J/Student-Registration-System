@@ -13,10 +13,16 @@
 <body>
    <%int listid=Integer.parseInt(request.getParameter("listid"));
      int id=(int)session.getAttribute("id");
+     String type=session.getAttribute("type").toString();
      session.setAttribute("listid", listid);
      Delete.Remove(listid); 
      List<Details> D=new ArrayList<>();
-     D=Read.getData(id);
+     if(type.equals("admin")){
+    	 D=Read.getData();
+     }
+     else{
+        D=Read.getData(id);
+     }
      session.setAttribute("Data",D);
      response.sendRedirect("viewAll.jsp"); %>
 </body>
