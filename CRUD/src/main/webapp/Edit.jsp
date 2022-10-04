@@ -18,9 +18,27 @@ body {
 </style>
 </head>
 <body>
-    <%Details D=FetchById.getData(Integer.parseInt(request.getParameter("id"))); %>
-    <%session.setAttribute("id", Integer.parseInt(request.getParameter("id"))); %>
-    <div class="row" style="margin-left:40% ; margin-top:110px" >
+    <%@include file="header.jsp" %>
+    <%Details D=FetchById.getData(Integer.parseInt(request.getParameter("listid"))); 
+      session.setAttribute("listid",Integer.parseInt(request.getParameter("listid")));%>
+    <%if(session.getAttribute("type").toString().equals("admin"))
+    {%>
+    	<div style="margin-left:70%;margin-top:2%">
+        <a href="Admin.jsp"><button class="btn btn-primary">Go Home</button></a>
+        </div>
+    <%
+    }
+    %>
+     <%if(session.getAttribute("type").toString().equals("user"))
+    {%>
+    	<div style="margin-left:70%;margin-top:2%">
+        <a href="User.jsp"><button class="btn btn-primary">Go Home</button></a>
+        </div>
+    <%
+    }
+    %>
+    
+    <div class="row" style="margin-left:40% ; margin-top:80px" >
       <div class="col-sm-4">
            <form action="Updates" method="post">
                <div align="left">

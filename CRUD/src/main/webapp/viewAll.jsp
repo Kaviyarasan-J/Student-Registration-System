@@ -18,7 +18,7 @@ body {
 </style>
 </head>
 <body>
-    <%if(session.getAttribute("type").toString()=="admin")
+    <%if(session.getAttribute("type").toString().equals("admin"))
     {%>
     	<div style="margin-left:70%;margin-top:10%">
         <a href="Admin.jsp"><button class="btn btn-primary">Go Home</button></a>
@@ -26,7 +26,7 @@ body {
     <%
     }
     %>
-     <%if(session.getAttribute("type").toString()=="user")
+     <%if(session.getAttribute("type").toString().equals("user"))
     {%>
     	<div style="margin-left:70%;margin-top:10%">
         <a href="User.jsp"><button class="btn btn-primary">Go Home</button></a>
@@ -48,7 +48,7 @@ body {
 						<th>Edit</th>
 						<th>Delete</th>
 					</tr>
-					</thead>
+				</thead>
 					<%
 					    List<Details> D=(List<Details>)session.getAttribute("Data");
 				        for(Details info:D){
@@ -58,8 +58,8 @@ body {
 					  <td><%=info.getAge()%></td>
 					  <td><%=info.getCourse()%></td>
 					  <td><%=info.getFee()%></td>
-					  <td><a href="Edit.jsp?id=<%=info.getId()%>">Edit</a></td>
-					  <td><a href="Delete.jsp?id=<%=info.getId()%>">Delete</a> </td>
+					  <td><a href="Edit.jsp?listid=<%=info.getListid()%>"><button class="btn btn-success">Edit</button></a></td>
+					  <td><a href="Delete.jsp?listid=<%=info.getListid()%>"><button class="btn btn-danger">Delete</button></a> </td>
 					</tr>
 					  <%} %>	  
 			</table>

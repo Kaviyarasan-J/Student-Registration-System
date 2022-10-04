@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Sign Up</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script>
    function fun(x){
@@ -15,11 +15,10 @@
 	   }
 	   if(x==0){
 		   document.getElementById("msg").style.display='block';
-		   document.getElementById("submission").style.display='none';
 	   }
 	   else{
 		   document.getElementById("msg").style.display='none';
-		   document.getElementById("submission").style.display='block';
+		   document.getElementById("submission").disabled=false;
 	   }
    }
    function check(){
@@ -28,7 +27,7 @@
 		   alert('Access key is wrong Try again!!');
 	   }
 	   else{
-		   document.getElementById("submission").style.display='block';
+		   document.getElementById("submission").disabled=false;
 	   }
    }
 </script>
@@ -75,8 +74,8 @@ body {
        <br>
        <br>
     </div>
-     <div id="submission" style="display:none" align="center">
-             <input type="submit" class="btn btn-success" value="Sign in" >
+     <div align="center">
+             <input type="submit" id="submission" class="btn btn-success" value="Sign in" disabled>
      </div>
 </form>
 </div>

@@ -17,6 +17,22 @@ body {
 </head>
 <body>
    <%@ include file ="header.jsp" %>
+       <%if(session.getAttribute("type").toString().equals("admin"))
+    {%>
+    	<div style="margin-left:70%;margin-top:2%">
+        <a href="Admin.jsp"><button class="btn btn-primary">Go Home</button></a>
+        </div>
+    <%
+    }
+    %>
+     <%if(session.getAttribute("type").toString().equals("user"))
+    {%>
+    	<div style="margin-left:70%;margin-top:2%">
+        <a href="User.jsp"><button class="btn btn-primary">Go Home</button></a>
+        </div>
+    <%
+    }
+    %>
    <div class="row" style="margin-left:40% ; margin-top:110px" >
       <div class="col-sm-4">
            <form action="Lists" method="post">

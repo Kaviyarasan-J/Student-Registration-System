@@ -6,6 +6,15 @@ public class Details {
      private int age;
      private String course;
      private int fee;
+     private int listid;
+     public Details(int id, String name, int age, String course, int fee,int listid) {
+ 		this.id = id;
+ 		this.name = name;
+ 		this.age = age;
+ 		this.course = course;
+ 		this.fee = fee;
+ 		this.listid=listid;
+ 	}
 	public Details(int id, String name, int age, String course, int fee) {
 		this.id = id;
 		this.name = name;
@@ -18,6 +27,12 @@ public class Details {
 		this.age = age;
 		this.course = course;
 		this.fee = fee;
+	}
+	public int getListid() {
+		return listid;
+	}
+	public void setListid(int listid) {
+		this.listid = listid;
 	}
 	public int getId() {
 		return id;

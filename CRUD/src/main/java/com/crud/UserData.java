@@ -26,7 +26,10 @@ public class UserData {
     	 
     	 ResultSet rs=ps.executeQuery();
     	 Boolean status=rs.next();
-    	 session.setAttribute("id", rs.getInt(1));
+    	 if(status) {
+    	    session.setAttribute("id", rs.getInt(1));
+    	    session.setAttribute("type", rs.getString(4));
+    	 }
     	 return status;
      }
 }

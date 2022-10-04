@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Error</h1>
+<h1 style="color:red">Error Found! login again</h1>
+<a href="DashBoard.jsp"><button>DashBoard</button></a>
 </body>
 </html>

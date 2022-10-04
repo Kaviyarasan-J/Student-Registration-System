@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import="com.crud.Delete" %>
+<%@page import="com.crud.Delete" %>
  <%@page import="com.Model.Details" %>
  <%@page import="java.util.*" %>
  <%@page import="com.crud.Read" %>
@@ -8,15 +8,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Delete</title>
+<title>Insert title here</title>
 </head>
 <body>
-   <%int listid=Integer.parseInt(request.getParameter("listid"));
-     int id=(int)session.getAttribute("id");
-     session.setAttribute("listid", listid);
+    <%int listid=Integer.parseInt(request.getParameter("listid"));
      Delete.Remove(listid); 
      List<Details> D=new ArrayList<>();
-     D=Read.getData(id);
+     D=Read.getData();
      session.setAttribute("Data",D);
      response.sendRedirect("viewAll.jsp"); %>
 </body>

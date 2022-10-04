@@ -25,9 +25,10 @@ public class Updates extends HttpServlet {
 		int Age=Integer.parseInt(request.getParameter("age"));
 		String Course=request.getParameter("course");
 		int Fee=Integer.parseInt(request.getParameter("fee"));
-		int id=Integer.parseInt(session.getAttribute("id").toString());
-		
-		Details details=new Details(id,Uname,Age,Course,Fee);
+		int id=(int)session.getAttribute("id");
+		int listid=(int)session.getAttribute("listid");
+		String type=session.getAttribute("type").toString();
+		Details details=new Details(id,Uname,Age,Course,Fee,listid);
 
 		try {
 			Update.update(details);
@@ -36,10 +37,19 @@ public class Updates extends HttpServlet {
 		}
 		
 		List<Details> D=new ArrayList<>();
+		if(type.equals("admin")) {
 		try {
 			D=Read.getData();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
+		}
+		}
+		else {
+			try {
+				D=Read.getData(id);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		session.setAttribute("Data", D);
 		response.sendRedirect("viewAll.jsp");

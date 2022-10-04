@@ -1,5 +1,6 @@
 package com.View;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,11 +22,13 @@ public class AddUser extends HttpServlet {
 		User Data=new User(uname,password,type);
 		
 		try {
-			AddUserDB.add(Data);
-			response.sendRedirect("Success.jsp");
+			AddUserDB.add(Data,request);
+			response.sendRedirect("User.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
-			response.sendRedirect("Error");
+			e.printStackTrace();
 		}
+		RequestDispatcher rs=request.getRequestDispatcher("Error.jsp");
+		rs.include(request, response);
 	}
 
 }

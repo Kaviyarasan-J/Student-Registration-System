@@ -15,7 +15,7 @@ public class Read {
    	 Statement stmt=con.createStatement();
    	 ResultSet Rs=stmt.executeQuery(query);
    	 while(Rs.next()) {
-   		 Details D=new Details(Rs.getInt(1),Rs.getString(2),Rs.getInt(3),Rs.getString(4),Rs.getInt(5));
+   		 Details D=new Details(Rs.getInt(1),Rs.getString(2),Rs.getInt(3),Rs.getString(4),Rs.getInt(5),Rs.getInt(6));
    		 Data.add(D);
    	 }
    	 return Data;
@@ -28,7 +28,7 @@ public class Read {
 	   	 Statement stmt=con.createStatement();
 	   	 ResultSet Rs=stmt.executeQuery(query);
 	   	 while(Rs.next()) {
-	   		 Details D=new Details(Rs.getInt(1),Rs.getString(2),Rs.getInt(3),Rs.getString(4),Rs.getInt(5));
+	   		 Details D=new Details(Rs.getInt(1),Rs.getString(2),Rs.getInt(3),Rs.getString(4),Rs.getInt(5),Rs.getInt(6));
 	   		 Data.add(D);
 	   	 }
 	   	 return Data;

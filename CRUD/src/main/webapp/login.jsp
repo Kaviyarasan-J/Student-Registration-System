@@ -10,13 +10,13 @@
 function fun(){
 	   var d=document.getElementById('pass').value;
 	   if(d.length<8){
+		   document.getElementById("submission").disabled=true;
 		   alert('Password must be minimum 8 characters');
 		   return;
 	   }
-	   document.getElementById("submission").style.display='block';
-}
-body {
-	 background-image:url('https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg');
+	   else{
+	      document.getElementById("submission").disabled=false;
+	   }
 }
 </script>
 <style>
@@ -54,8 +54,8 @@ body {
            </span>
         </div>
         <br>
-        <div id="submission" style="display:block" align="center">
-             <input type="submit" class="btn btn-primary" value="Login" >
+        <div align="center">
+             <input type="submit" id="submission" class="btn btn-primary" value="Login" disabled>
         </div>
    </form>
    </div>

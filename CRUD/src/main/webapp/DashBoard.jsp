@@ -16,15 +16,21 @@ body {
 </style>
 </head>
 <body>
-   <div class="row" style="margin-left:43% ; margin-top:300px">
-   <div class="col-sm-4">
-    <span>
+   <%@include file="header.jsp" %>
+   <div class="row" style="margin-left:31% ; margin-top:300px">
+   <div class="col-sm-4" >
+    <span style="padding:50px">
         <a href="login.jsp"> <button class="btn btn-primary btn-lg">Login</button></a>
     </span>
-    <span>
+    </div>
+    <div class="col-sm-4">
+    <span style="padding:50px">
         <a href="signup.jsp"><button class="btn btn-primary btn-lg">Sign Up</button></a>
      </span>
    </div>
+   </div>
+   <div style="margin-top:16%">
+      <%@include file="Footer.jsp"%>
    </div>
 </body>
 </html>

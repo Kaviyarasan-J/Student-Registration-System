@@ -16,6 +16,7 @@ body {
 </style>
 </head>
 <body>
+  <%@include file="header.jsp" %>
    <div class="row" style="margin-top:5%;margin-left:90%">
    <div class="col-sm-4">
    <form action="DashBoard.jsp">
@@ -29,7 +30,7 @@ body {
   <div class="col-sm-4">
    <form action="UserDatas" method="post">
      <div align="center">
-         <button class="btn btn-primary btn-lg">View All Bookings</button>
+         <button class="btn btn-primary btn-lg">View All Courses</button>
      </div>
      <br>
      
