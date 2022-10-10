@@ -22,6 +22,7 @@ body {
     {%>
     	<div style="margin-left:70%;margin-top:3%">
         <a href="Admin.jsp"><button class="btn btn-primary">Go Home</button></a>
+        <button onclick="window.print()">Print</button>
         </div>
     <%
     }
@@ -30,11 +31,11 @@ body {
     {%>
     	<div style="margin-left:70%;margin-top:3%">
         <a href="User.jsp"><button class="btn btn-primary">Go Home</button></a>
+        <button onclick="window.print()">Print</button>
         </div>
     <%
     }
     %>
-    
 	<div class="col-sm-8" style="margin-top:30px;margin-left:250px">
 		<div class="panel-body">
 			<table id="tbl-student" class="table table-responsive table-bordered"
@@ -59,7 +60,7 @@ body {
 					  <td><%=info.getCourse()%></td>
 					  <td><%=info.getFee()%></td>
 					  <td><a href="Edit.jsp?listid=<%=info.getListid()%>"><button class="btn btn-success">Edit</button></a></td>
-					  <td><a href="Delete.jsp?listid=<%=info.getListid()%>"><button class="btn btn-danger">Delete</button></a> </td>
+					  <td><a href="Delete.jsp?listid=<%=info.getListid()%>"><button onclick="alert('Deleted Successfully')" class="btn btn-danger">Delete</button></a> </td>
 					</tr>
 					  <%} %>	  
 			</table>

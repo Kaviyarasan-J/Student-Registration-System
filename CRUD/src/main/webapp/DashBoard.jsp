@@ -17,14 +17,14 @@ body {
 </head>
 <body >
    <%@include file="header.jsp" %>
-   <div class="row" style="margin-left:31% ; margin-top:300px">
+   <div class="row" style="margin-left:35% ; margin-top:300px">
    <div class="col-sm-4" >
-    <span style="padding:50px">
+    <span >
         <a href="login.jsp"> <button class="btn btn-primary btn-lg">Login</button></a>
     </span>
     </div>
     <div class="col-sm-4">
-    <span style="padding:50px">
+    <span >
         <a href="signup.jsp"><button class="btn btn-primary btn-lg">Sign Up</button></a>
      </span>
    </div>

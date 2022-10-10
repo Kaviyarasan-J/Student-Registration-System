@@ -14,6 +14,12 @@ body {
   background-size: cover;
 }
 </style>
+<script>
+    function fun(){
+    	alert("Added Successfully");
+    	return true;
+    }
+</script>
 </head>
 <body>
    <%@ include file ="header.jsp" %>
@@ -35,7 +41,7 @@ body {
     %>
    <div class="row" style="margin-left:40% ; margin-top:110px" >
       <div class="col-sm-4">
-           <form action="Lists" method="post">
+           <form action="Lists" method="post" onsubmit="return fun()">
                <div align="left">
                 <label class="form-label" style="color:white">Name</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter Name" required>

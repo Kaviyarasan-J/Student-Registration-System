@@ -25,6 +25,7 @@
    function check(){
 	   var d=document.getElementById('adminaccess').value;
 	   if(d!='admin'){
+		   document.getElementById("submission").disabled=true;
 		   alert('Access key is wrong Try again!!');
 	   }
 	   else{
@@ -69,7 +70,7 @@ body {
         <br>
     <div id="msg" style="display:none" align="left">
       <label class="form-label" style="color:white">Enter Access Key :</label>
-       <input type="password" class="form-control"  id="adminaccess" name="adminaccess">
+       <input type="password" class="form-control"  id="adminaccess" placeholder="Enter Access Key" name="adminaccess">
        <input type="button"  class="btn btn-primary" onclick="check()" value="Validate"><br>
        <br>
        <br>

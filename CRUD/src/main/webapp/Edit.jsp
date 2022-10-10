@@ -16,6 +16,12 @@ body {
   background-size: cover;
 }
 </style>
+<script>
+    function fun(){
+    	alert("Edited Successfully");
+    	return true;
+    }
+</script>
 </head>
 <body>
     <%@include file="header.jsp" %>
@@ -40,7 +46,7 @@ body {
     
     <div class="row" style="margin-left:40% ; margin-top:80px" >
       <div class="col-sm-4">
-           <form action="Updates" method="post">
+           <form action="Updates" method="post" onsubmit="return fun()">
                <div align="left">
                 <label class="form-label" style="color:white">Name</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter Name" value="<%=D.getName()%>"required>
