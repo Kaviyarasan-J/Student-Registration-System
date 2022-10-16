@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
  <%@ page import="com.Model.Details" %>
   <%@ page import="com.crud.FetchById" %>
+  <%@ page import="com.Model.Course" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +22,9 @@ body {
     function fun(){
     	alert("Edited Successfully");
     	return true;
+    }
+    function show(i){
+    	document.getElementById("FEE").innerHTML='Total Fee :'+i;
     }
 </script>
 </head>
@@ -57,9 +62,20 @@ body {
                 <input type="text" class="form-control" name="age" placeholder="Enter Age" value="<%=D.getAge()%>"required>
                 </div>
                 <br>
-               <div align="left">
-                 <label class="form-label" style="color:white">Course</label>
-                <input type="text" class="form-control" name="course" placeholder="Enter Course" value="<%=D.getCourse()%>"required>
+                <div align="left">
+               <label class="form-label"  style="color:white">Course</label>
+                <select class="form-select" aria-label="Default select example" name="course" required>
+                      <option selected disabled>Select any option</option>
+                      <%List<Course> Co = (List<Course>)session.getAttribute("Course");
+                         if(Co!=null){
+                             for(Course info:Co){%>
+                	             <option onClick="show(<%=info.getFee()%>)" value=<%=info.getCourse()%>><%=info.getCourse()%></option>
+                         <%   }
+                         }%>
+                </select>
+                </div>
+                <br>
+                <div id="FEE">
                 </div>
                 <br>
                <div align="left">

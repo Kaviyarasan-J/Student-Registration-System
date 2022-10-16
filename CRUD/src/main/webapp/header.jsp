@@ -7,7 +7,7 @@
 </head>
 <body>
   <div align="center" style="background-color:black">
-     <h1 style="color:orange"><b>STUDENT REGISTERATION SYSTEM</b></h1>
+     <h1 style="color:orange"><b>STUDENT REGISTRATION SYSTEM</b></h1>
   </div>
 </body>
 </html>

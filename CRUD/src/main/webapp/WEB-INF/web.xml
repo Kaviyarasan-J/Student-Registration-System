@@ -102,4 +102,14 @@
     <servlet-name>UserDatas</servlet-name>
     <url-pattern>/UserDatas</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCourse</display-name>
+    <servlet-name>AddCourse</servlet-name>
+    <servlet-class>com.View.Course.AddCourse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCourse</servlet-name>
+    <url-pattern>/AddCourse</url-pattern>
+  </servlet-mapping>
 </web-app>

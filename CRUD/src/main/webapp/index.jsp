@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.Model.Course" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,14 +54,23 @@ body {
                 <input type="text" class="form-control" name="age" placeholder="Enter Age" required>
                 </div>
                 <br>
+                <br>
                <div align="left">
-                 <label class="form-label"  style="color:white">Course</label>
-                <input type="text" class="form-control" name="course" placeholder="Enter Course" required>
+               <label class="form-label"  style="color:white">Course</label>
+                <select class="form-select" aria-label="Default select example" name="course">
+                      <option disabled>Select Course</option>
+                      <%List<Course> Co = (List<Course>)session.getAttribute("Course");
+                         if(Co!=null){
+                             for(Course info:Co){%>
+                	              <option value=<%=info.getCourse()%>><%=info.getCourse()%></option>
+                         <%   }
+                         }%>
+                </select>
                 </div>
                 <br>
                <div align="left">
                  <label class="form-label"  style="color:white">Fee</label>
-                <input type="text" class="form-control" name="fee" placeholder="Enter Fee"required>
+                <input type="text" class="form-control" name="fee" placeholder="Enter Fee" required>
                 </div>
                 <br>
                <div align="right">

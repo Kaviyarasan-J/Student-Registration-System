@@ -48,6 +48,7 @@ body {
 						<th>Fee</th>
 						<th>Edit</th>
 						<th>Delete</th>
+						<th>View</th>
 					</tr>
 				</thead>
 					<%
@@ -61,6 +62,7 @@ body {
 					  <td><%=info.getFee()%></td>
 					  <td><a href="Edit.jsp?listid=<%=info.getListid()%>"><button class="btn btn-success">Edit</button></a></td>
 					  <td><a href="Delete.jsp?listid=<%=info.getListid()%>"><button onclick="alert('Deleted Successfully')" class="btn btn-danger">Delete</button></a> </td>
+					  <td><a href="View.jsp?course=<%=info.getCourse()%>"><button class="btn btn-primary">View</button></a></td>
 					</tr>
 					  <%} %>	  
 			</table>

@@ -1,7 +1,7 @@
-package com.View;
+package com.View.Course;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,23 +13,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.Model.Course;
-import com.Model.Details;
-import com.crud.Read;
 import com.crud.courses.Courses;
 
-public class UserDatas extends HttpServlet {
+public class AddCourse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
-		List<Details> D=new ArrayList<>();
+		String course=request.getParameter("course");
+		int fee=Integer.parseInt(request.getParameter("fee"));
+		String url=request.getParameter("url");
+		
+		Course Data=new Course(course,fee,url);
+		
 		try {
-			D=Read.getData((int)session.getAttribute("id"));
+			Courses.addCourse(Data);
+			List<Course> C=new ArrayList<>();
+			C=Courses.getData();
+			session.setAttribute("Course",C);
+			response.sendRedirect("Admin.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		
-		session.setAttribute("Data", D);
-		response.sendRedirect("viewAll.jsp");
+		RequestDispatcher rs=request.getRequestDispatcher("Error.jsp");
+		rs.include(request, response);
 	}
+
 }

@@ -26,11 +26,20 @@ body {
     </form>
     </div>
     </div>
-<div class="row" style="margin-top:10%;margin-left:45%">
+   <div class="row" style="margin-top:10%;margin-left:45%">
    <div class="col-sm-4">
      <form action="Datas" method="post">
        <div>
           <button class="btn btn-primary btn-lg">View</button>
+      </div>
+     </form>
+     </div>
+   </div>
+   <div class="row" style="margin-top:2%;margin-left:43%">
+   <div class="col-sm-4">
+     <form action="AddCoures.jsp">
+       <div>
+          <button class="btn btn-primary btn-lg">Add Course</button>
       </div>
      </form>
      </div>
